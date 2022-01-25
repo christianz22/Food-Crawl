@@ -1,11 +1,19 @@
 
 import './App.css';
 import { useState } from 'react';
-import Food from './Business';
 import Reviews from './Rewiews';
 import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Restaurant } from './RestaurantInterface';
+
+import LandingPage from './LandingPage';
+
+import BucketList from './components/BucketList/BucketList'
+import foodAPI from './RestuarantAPI';
+
+
+
+
 
 function App() {
   const [details, setDetails] = useState<Restaurant[]>([{
@@ -64,11 +72,13 @@ function App() {
           path='/reviews' 
           element={<Reviews />}
           />
-        <Route
-          path='/food/'
-          element={<Food />}
-        />
       </Routes>
+
+    <LandingPage />
+
+
+     <BucketList />
+
     </div>
     </Router>
   );

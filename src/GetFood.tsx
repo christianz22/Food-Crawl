@@ -7,13 +7,18 @@ export interface BusinessResponse {
 export interface BusinessItem {
     rating: number;
     alias: string;
+    id: any;
 }
 
 
 function GetBusiness(): Promise<BusinessItem[]> {
-    return axios.get<BusinessResponse>(`https://api.yelp.com/v3/businesses/search/burger`).then( (response: any ) => {
-        return response.data.businesses;
+   
+    return axios.get(`http://localhost:5000/yelp/?term=sushi`).then( (response: any ) => {
+        
+        return response.data;
+        
     });
+    
 }
 
 
