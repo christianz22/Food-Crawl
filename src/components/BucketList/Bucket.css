@@ -1,0 +1,10 @@
+.list {
+    border-radius: 25px;
+    background: #9aa4aa;
+    padding: 20px;
+    width: 75%;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
