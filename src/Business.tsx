@@ -14,11 +14,15 @@ function Food() {
         <ul>
             {
            business.map(w => {
-               return <div>
-               <li> {w.rating} </li> 
-               <p>{w.alias}</p>
-                </div>
-            
+               return 
+               <div>
+                <li> 
+                    {w.rating} 
+                </li> 
+                <p>
+                    {w.alias}
+                </p>
+               </div>
            })
             }
         </ul>
