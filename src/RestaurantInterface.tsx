@@ -10,7 +10,7 @@ export interface Restaurant
         "image_url": string,
         "is_closed": boolean,
         "url": string,
-        "categories":[
+        "categories"?:[
            {
               "alias": string,
               "title": string
@@ -25,21 +25,21 @@ export interface Restaurant
            }
         ],
         "rating": number,
-        "coordinates":{
+        "coordinates"?:{
            "latitude": number,
            "longitude": number
         },
-        "location":{
+        "location"?:{
            "address1": string,
-           "address2": string,
-           "address3": string,
+           "address2": string | null,
+           "address3": string | null,
            "city": string,
            "zip_code": string,
            "country": string,
            "state": string,
            "display_address": string[]
         },
-        "distance": number
+        "distance"?: number
 }  
 
 export default RestaurantResponse;
