@@ -1,12 +1,20 @@
 import { useParams } from "react-router";
 import { Restaurant } from "./RestaurantInterface";
+import { GetRestaurants } from "./GetRestaurants";
+import { useEffect, useState } from "react";
 
-function RestaurantInfo({details} : {details: Restaurant[]}) {
+function RestaurantInfo() {
     let id = useParams().restaurantId as string;
     // at some point this will be replaced with array of restaurants.
-    let restaurant = details.find((r) => {
-       return r.id === id
-    })
+    // let restaurant = details.find((r) => {
+    //    return r.id === id
+    // })
+    const [restaurant, setRestaurant] = useState<Restaurant | null>(null)
+    useEffect (() => {
+        GetRestaurants(id).then ((response) => {
+            setRestaurant(response)
+        })
+    }, [])
     if ( !restaurant ) {
         return <div>Not found</div>
     } else {

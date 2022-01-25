@@ -1,4 +1,5 @@
 export interface IBusiness {
+    "id": string;
     "rating": number;
     "phone": number;
     "alias": string;
