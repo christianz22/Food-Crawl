@@ -1,8 +1,6 @@
 
 import './App.css';
-import Food from './Business';
-
-
+import LandingPage from './LandingPage';
 
 
 function App() {
@@ -11,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>Food Crawl</h1>
-     <Food />
+    <LandingPage />
     </div>
   );
 }
