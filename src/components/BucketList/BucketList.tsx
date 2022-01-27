@@ -1,46 +1,29 @@
-import { useState } from 'react';
-import './Bucket.css'
+import { useState, useContext } from 'react';
+import IBusiness from '../../types/IBusinessResponse';
+import BucketListRow from './BucketListRow';
+import BucketContext from './BucketContext';
 
-import { IBusiness } from '../../types/IBusinessResponse';
 
-
-
-function BucketList () {
+function BucketList() {
+   
+    const context = useContext(BucketContext);
     
-    const [bucketList, setBucketList] = useState<IBusiness[]>([]);
-
-    const handleDelete = (i: number) => {
-        setBucketList((prevBucketList) => {
-          return [...prevBucketList.slice(0, i), ...prevBucketList.slice(i + 1)];
-        });
-      };
+    
 
     return (
-
-        <>
-            {bucketList.map( (restuarant, i ) => {
-                <div className='bucketList'> 
-                <div className='bucketListItems'> 
-
-                    <h2>{restuarant.name}</h2>
-                    <h3>{restuarant.location?.city}</h3>
+        <div className="bucketlist-container">
+           
+            <table>
+                <thead><td>Name</td><td>City</td><td>Restaurant Link</td><td>Remove</td></thead>
+                {
+                    context.bucketList.map((foodItem, i) => <BucketListRow foodItem={foodItem} index={i}/>)
                     
-                </div>
-                <div className='bucketListBtns'>
-                <button
-                type="submit"
-                onClick={() => {
-                    handleDelete(i);
-                }}>
-                Delete
-              </button>
-                    <button>Add to Favorites</button>
-                </div>
-                </div>  
+                }
                 
-        })}
-        </>
-    );  
-};
+            </table>
+
+        </div>
+    )
+}
 
 export default BucketList;

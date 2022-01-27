@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { IBusiness } from '../types/IBusinessResponse';
+import BucketContext from '../components/BucketList/BucketContext';
+
+
+
 
 interface IProps {
     item: IBusiness;
@@ -10,13 +14,9 @@ interface IProps {
 
  const ResultItem = ({item}: IProps ) => {
     
-    const [bucketList, setBucketList] = useState<IBusiness[]>([]);
+    const {addBucket} = useContext(BucketContext);
 
-    const addBucketList = (business: IBusiness) => {
-        setBucketList((prevBusiness) => {
-          return [...prevBusiness, business];
-        });
-      };
+
     
 
     return (
@@ -27,7 +27,7 @@ interface IProps {
         <button
             type="submit"
             onClick={() => {
-            addBucketList(item);
+            addBucket(item);
             }}>
             Add to My Bucket List
         </button>

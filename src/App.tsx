@@ -10,20 +10,7 @@ import Navbar from './components/Sidebar/NavBar';
 
 function App() {
 
-  const [bucketList, setBucketList] = useState<IBusiness[]>([]);
-
-  const addBucketList = (business: IBusiness) => {
-      setBucketList((prevBusiness) => {
-        return [...prevBusiness, business];
-      });
-    };
   
-  const handleDelete = (i: number) => {
-      setBucketList((prevBucketList) => {
-        return [...prevBucketList.slice(0, i), ...prevBucketList.slice(i + 1)];
-      });
-    };
-
   return (
     <Router basename={process.env.PUBLIC_URL}>
 
