@@ -29,12 +29,17 @@ const BucketList = () => {
     return (
 
         <>
-            {restaurants.map( (restuarant: Restaurant, index: any ) => (
+            {restaurants.map( (restaurant: Restaurant, index: any ) => (
                  <div className='list'> 
-                  <img src={restuarant.image_url} alt="restuarant" />
-                    <h3>Restuarant Name</h3>
-
-                    <p>Restuarant Details</p>
+                  <img src={restaurant.image_url} alt="restuarant" />
+                    <h3>{restaurant.name}</h3>
+                    <div className='details'>
+                        <p><strong>Address:</strong></p>
+                        <p>Street: {restaurant.location?.address1}</p>
+                        <p>City: {restaurant.location?.city}</p>
+                        <p>State: {restaurant.location?.state}</p>
+                        <p>Zipcode: {restaurant.location?.zip_code}</p>
+                    </div>
 
                     <button>Delete</button>
                     <button>Add to Favorites</button>
