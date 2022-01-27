@@ -10,7 +10,8 @@
     color: white;
     align-items: center;
     position: relative;
-    left: 250px;
+    left: 40%;
+    text-align: center;
 }
 
 .menu-bars {
