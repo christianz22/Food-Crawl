@@ -11,15 +11,15 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Watchlist',
-        path: '/watchlist',
+        title: 'Bucketlist',
+        path: '/bucketlist',
         icon: <GiIcons.GiFilmSpool/>,
         cName: 'nav-text'
-    }
-    // {
-    //     title: 'Favorites',
-    //     path: '/favorites',
-    //     icon: <AiIcons.AiOutlineHeart/>,
-    //     cName: 'nav-text'
-    // },
+    },
+    {
+        title: 'Favorites',
+        path: '/favorites',
+        icon: <AiIcons.AiOutlineHeart/>,
+        cName: 'nav-text'
+    },
 ];

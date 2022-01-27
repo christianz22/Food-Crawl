@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { Restaurant } from "./RestaurantInterface";
 import { GetRestaurants } from "./GetRestaurants";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function RestaurantInfo() {
     let id = useParams().restaurantId as string;
@@ -20,6 +21,7 @@ function RestaurantInfo() {
     } else {
     return (
         <div>
+            <Link to='/'> Return Home</Link>  
             <h1>{restaurant.name}</h1>
             <img src={restaurant.image_url}></img>
             <p><strong>Rating:</strong></p>
@@ -30,7 +32,7 @@ function RestaurantInfo() {
             <p>State: {restaurant.location?.state}</p>
             <p>Zipcode: {restaurant.location?.zip_code}</p>
             <h1>Reviews:</h1>
-            <p>Reviews go here!</p>
+            <p>Reviews go here!</p>  
         </div>
     )}
 };
