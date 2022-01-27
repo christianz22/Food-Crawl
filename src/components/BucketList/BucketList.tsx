@@ -31,7 +31,7 @@ const BucketList = () => {
         <>
             {restaurants.map( (restaurant: Restaurant, index: any ) => (
                  <div className='list'> 
-                  <img src={restaurant.image_url} alt="restuarant" />
+                  <img className='businessIMG' src={restaurant.image_url} alt="restuarant" />
                     <h3>{restaurant.name}</h3>
                     <div className='details'>
                         <p><strong>Address:</strong></p>
