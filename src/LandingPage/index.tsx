@@ -4,12 +4,14 @@ import IBusinessResponse, { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
 import TopNav from './TopNav/topNav';
 import SearchBar from './SearchBar';
+import BucketList from '../components/BucketList/BucketList';
 
 
 const LandingPage = () => {
     const [results, setResults] = useState<IBusiness[]>([]);
     const [food, setFood] = useState('Sushi');
     const [location, setLocation] = useState('Michigan');
+    
 
     const onFormSubmit: react.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
@@ -34,7 +36,7 @@ const LandingPage = () => {
     const resultItems = useMemo( () => {
         return results.map((item, key) => {
             return (
-                <ResultItem item={item} key={key} />
+                <ResultItem item={item} key={key}  />
             )
         })
     },[results]);

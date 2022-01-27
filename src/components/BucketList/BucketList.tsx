@@ -1,50 +1,44 @@
-import react, {useState, useEffect} from 'react'
-import RestaurantResponse, { Restaurant } from '../../RestaurantInterface';
+import { useState } from 'react';
 import './Bucket.css'
-import foodAPI from '../../RestuarantAPI';
-import axios from 'axios';
+
+import { IBusiness } from '../../types/IBusinessResponse';
 
 
-const BucketList = () => {
-    const [restaurants, setRestuarants] = useState < Restaurant[]> ([ ])
-   
-    // axios.get(`${foodAPI}`, {params}).then((response: RestaurantResponse) => {
-    //     const {results} = response;
-    //     setRestuarants(results);
-    // }).catch((error) => {
-    //     console.error(error);
-    // })
-    useEffect(() => {
-        foodAPI().then((response: RestaurantResponse) => {
-            console.log(response)
-            const {results} = response;
-            setRestuarants(results);
-        }).catch((error) => {
-            console.error(error);
-        })
-        
-    }, [ ])
 
+function BucketList () {
+    
+    const [bucketList, setBucketList] = useState<IBusiness[]>([]);
+
+    const handleDelete = (i: number) => {
+        setBucketList((prevBucketList) => {
+          return [...prevBucketList.slice(0, i), ...prevBucketList.slice(i + 1)];
+        });
+      };
 
     return (
 
         <>
-            {restaurants.map( (restaurant: Restaurant, index: any ) => (
-                 <div className='list'> 
-                  <img src={restaurant.image_url} alt="restuarant" />
-                    <h3>{restaurant.name}</h3>
-                    <div className='details'>
-                        <p><strong>Address:</strong></p>
-                        <p>Street: {restaurant.location?.address1}</p>
-                        <p>City: {restaurant.location?.city}</p>
-                        <p>State: {restaurant.location?.state}</p>
-                        <p>Zipcode: {restaurant.location?.zip_code}</p>
-                    </div>
+            {bucketList.map( (restuarant, i ) => {
+                <div className='bucketList'> 
+                <div className='bucketListItems'> 
 
-                    <button>Delete</button>
+                    <h2>{restuarant.name}</h2>
+                    <h3>{restuarant.location?.city}</h3>
+                    
+                </div>
+                <div className='bucketListBtns'>
+                <button
+                type="submit"
+                onClick={() => {
+                    handleDelete(i);
+                }}>
+                Delete
+              </button>
                     <button>Add to Favorites</button>
                 </div>
-            ))}
+                </div>  
+                
+        })}
         </>
     );  
 };
