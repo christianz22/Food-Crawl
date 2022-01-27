@@ -1,13 +1,10 @@
 
 import './App.css';
-// import { useState } from 'react';
 import Reviews from './Rewiews';
 import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Restaurant } from './RestaurantInterface';
 import LandingPage from './LandingPage';
 import BucketList from './components/BucketList/BucketList'
-import foodAPI from './RestuarantAPI';
 
 function App() {
   return (
