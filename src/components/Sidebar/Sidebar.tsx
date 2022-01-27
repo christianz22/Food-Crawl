@@ -2,6 +2,7 @@ import React from 'react'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import * as GiIcons from 'react-icons/gi'
+import { BsBucket } from "react-icons/bs";
 
 export const SidebarData = [
     {
@@ -13,7 +14,7 @@ export const SidebarData = [
     {
         title: 'Bucketlist',
         path: '/bucketlist',
-        icon: <GiIcons.GiFilmSpool/>,
+        icon: <BsBucket/>, 
         cName: 'nav-text'
     },
     {
@@ -22,4 +23,10 @@ export const SidebarData = [
         icon: <AiIcons.AiOutlineHeart/>,
         cName: 'nav-text'
     },
+    {
+        title: 'Reviews',
+        path: '/reviews',
+        icon: <AiIcons.AiOutlineStar/>,
+        cName: 'nav-text'
+    }
 ];

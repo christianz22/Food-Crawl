@@ -5,10 +5,14 @@ import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from './LandingPage';
 import BucketList from './components/BucketList/BucketList'
+import Navbar from './components/Sidebar/NavBar';
 
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
+
+    <Navbar />
+
     <div className="App">
       <h1>Food Crawl</h1>
       <Routes>
