@@ -1,5 +1,6 @@
 
 import './App.css';
+import { useState } from 'react';
 import Reviews from './Rewiews';
 import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -8,6 +9,8 @@ import BucketList from './components/BucketList/BucketList'
 import Navbar from './components/Sidebar/NavBar';
 
 function App() {
+
+  
   return (
     <Router basename={process.env.PUBLIC_URL}>
 
@@ -38,3 +41,5 @@ function App() {
   );
 }
 export default App;
+
+// bucketList={bucketList} handleDelete={handleDelete}

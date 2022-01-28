@@ -1,52 +1,29 @@
-import react, {useState, useEffect} from 'react'
-import RestaurantResponse, { Restaurant } from '../../RestaurantInterface';
-import './Bucket.css'
-import foodAPI from '../../RestuarantAPI';
-import axios from 'axios';
+import { useState, useContext } from 'react';
+import IBusiness from '../../types/IBusinessResponse';
+import BucketListRow from './BucketListRow';
+import BucketContext from './BucketContext';
 
 
-const BucketList = () => {
-    const [restaurants, setRestuarants] = useState < Restaurant[]> ([ ])
+function BucketList() {
    
-    // axios.get(`${foodAPI}`, {params}).then((response: RestaurantResponse) => {
-    //     const {results} = response;
-    //     setRestuarants(results);
-    // }).catch((error) => {
-    //     console.error(error);
-    // })
-    useEffect(() => {
-        foodAPI().then((response: RestaurantResponse) => {
-            console.log(response)
-            const {results} = response;
-            setRestuarants(results);
-        }).catch((error) => {
-            console.error(error);
-        })
-        
-    }, [ ])
-
+    const context = useContext(BucketContext);
+    
+    
 
     return (
+        <div className="bucketlist-container">
+           
+            <table>
+                <thead><td>Name</td><td>City</td><td>Restaurant Link</td><td>Remove</td></thead>
+                {
+                    context.bucketList.map((foodItem, i) => <BucketListRow foodItem={foodItem} index={i}/>)
+                    
+                }
+                
+            </table>
 
-        <>
-            {restaurants.map( (restaurant: Restaurant, index: any ) => (
-                 <div className='list'> 
-                  <img className='businessIMG' src={restaurant.image_url} alt="restuarant" />
-                    <h3>{restaurant.name}</h3>
-                    <div className='details'>
-                        <p><strong>Address:</strong></p>
-                        <p>Street: {restaurant.location?.address1}</p>
-                        <p>City: {restaurant.location?.city}</p>
-                        <p>State: {restaurant.location?.state}</p>
-                        <p>Zipcode: {restaurant.location?.zip_code}</p>
-                    </div>
-
-                    <button>Delete</button>
-                    <button>Add to Favorites</button>
-                </div>
-            ))}
-        </>
-    );  
-};
+        </div>
+    )
+}
 
 export default BucketList;

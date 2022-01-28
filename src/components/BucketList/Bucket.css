@@ -7,14 +7,19 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .details {
+.details {
     text-align: center;
     font-size: 5px;
-  }
+}
 
+<<<<<<< HEAD
   .businessIMG {
+=======
+
+/* img {
+>>>>>>> 6ef09fa7087372d8084d32f5fdaf9c22279089be
     max-width: 100px;
     height: auto;
     float: left;
