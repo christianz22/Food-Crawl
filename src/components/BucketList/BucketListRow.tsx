@@ -11,7 +11,7 @@ function FavoritesListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, 
         <tr className='bucket-list-row'>
             <td>{foodItem.name}</td>
             <td>{foodItem.location?.city}</td>
-            <td><a href={foodItem.url}>{foodItem.url}</a></td>
+            <td><a href={foodItem.url}>Website</a></td>
             <td><button onClick={ () => removeBucket(index)}>Remove</button></td>
         </tr>
     )
