@@ -7,14 +7,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .details {
+.details {
     text-align: center;
     font-size: 5px;
-  }
+}
 
-  img {
+
+/* img {
     max-width: 100px;
     height: auto;
     float: left;

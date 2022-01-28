@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BucketContextProvider from './components/BucketList/BucketContextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BucketContextProvider>
+      <App />
+    </BucketContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
