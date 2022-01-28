@@ -4,15 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import BucketContextProvider from './components/BucketList/BucketContextProvider';
+import AuthContextProvider from './authentication/AuthContextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <BucketContextProvider>
+      <AuthContextProvider>
       <App />
+      </AuthContextProvider>
     </BucketContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
