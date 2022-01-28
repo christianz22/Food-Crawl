@@ -4,14 +4,15 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    text-align: center;
 }
 
 .navbar h1 {
     color: white;
     align-items: center;
     position: relative;
-    left: 40%;
     text-align: center;
+    left: 40%;
 }
 
 .menu-bars {
