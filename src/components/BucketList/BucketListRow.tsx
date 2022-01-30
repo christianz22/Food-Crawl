@@ -3,7 +3,7 @@ import BucketContext from './BucketContext';
 import { IBusiness } from '../../types/IBusinessResponse';
 
 
-function FavoritesListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, index: number }) {
+function BucketListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, index: number }) {
 
    const {removeBucket} = useContext(BucketContext);
 
@@ -17,4 +17,4 @@ function FavoritesListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, 
     )
 }
 
-export default FavoritesListRow;
+export default BucketListRow;

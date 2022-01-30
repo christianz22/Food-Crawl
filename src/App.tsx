@@ -5,7 +5,8 @@ import Reviews from './Rewiews';
 import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from './LandingPage';
-import BucketList from './components/BucketList/BucketList'
+import BucketList from './components/BucketList/BucketList';
+import Favorite from './components/BucketList/Favorite';
 import Navbar from './components/Sidebar/NavBar';
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
         <Route
           path='/bucketlist'
           element={<BucketList />}
+        />
+        <Route
+          path='/favorites'
+          element={<Favorite />}
         />
       </Routes>
     </div>
