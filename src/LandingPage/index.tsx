@@ -2,9 +2,8 @@ import axios from 'axios';
 import react, { useState, useMemo } from 'react';
 import IBusinessResponse, { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
-import TopNav from './TopNav/topNav';
 import SearchBar from './SearchBar';
-import BucketList from '../components/BucketList/BucketList';
+
 
 
 const LandingPage = () => {
@@ -17,7 +16,7 @@ const LandingPage = () => {
         e.preventDefault();
         if(!location.length) return;
         const params = {term: food, location};
-        axios.get('http://localhost:5000/yelp', {params}).then((response: IBusinessResponse) => {
+        axios.get('http://localhost:5001/food-crawl-gc/us-central1/api/yelp', {params}).then((response: IBusinessResponse) => {
             const {data} = response;
             setResults(data);
         }).catch((error) => {
@@ -44,7 +43,7 @@ const LandingPage = () => {
 
     return (
         <div>
-            <TopNav />
+            
             <SearchBar 
                 onFormSubmit={onFormSubmit} 
                 onFoodChange={onFoodChange}

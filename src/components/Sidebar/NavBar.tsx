@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import { IoPizzaOutline } from "react-icons/io5";
 import { GiHamburger } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./Sidebar";
 import { IconContext } from 'react-icons';
+import SignIn from '../Signin/signin';
 import './NavBar.css'
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false);
+
+    
 
     const showSidebar = () => setSidebar(!sidebar);
     return (
@@ -18,8 +22,11 @@ function Navbar() {
                 <Link to='#' className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>
-                <h1><GiHamburger/>Food Crawl</h1>
-            </div>
+                <h1><GiHamburger/>Food Crawl<IoPizzaOutline/></h1>
+                <SignIn />
+                </div>
+            
+ 
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
@@ -34,8 +41,11 @@ function Navbar() {
                                     {item.icon}
                                     <span>{item.title}</span>
                                 </Link>
+                                
                             </li>
+                            
                         )
+                        
                     })}
                 </ul>
             </nav>
