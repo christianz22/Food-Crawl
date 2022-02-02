@@ -2,7 +2,7 @@ import axios from 'axios';
 import react, { useState, useMemo } from 'react';
 import IBusinessResponse, { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
-import TopNav from './TopNav/topNav';
+
 import SearchBar from './SearchBar';
 import BucketList from '../components/BucketList/BucketList';
 import { GetRestaurants, SearchRestaurants } from '../GetRestaurants';
@@ -44,7 +44,7 @@ const LandingPage = () => {
 
     return (
         <div>
-            <TopNav />
+            
             <SearchBar 
                 onFormSubmit={onFormSubmit} 
                 onFoodChange={onFoodChange}

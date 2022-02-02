@@ -14,7 +14,8 @@ interface IProps {
 
  const ResultItem = ({item}: IProps ) => {
     
-    const {addBucket} = useContext(BucketContext);
+    const {addBucket, addFavorite} = useContext(BucketContext);
+    
 
 
     
@@ -30,6 +31,13 @@ interface IProps {
             addBucket(item);
             }}>
             Add to My Bucket List
+        </button>
+        <button
+            type="submit"
+            onClick={() => {
+            addFavorite(item);
+            }}>
+            Add to Favorites
         </button>
         <p><Link to={"restaurant-info/"+item.id}>See More Details</Link></p>
         </div>
