@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios";
 export interface IBusiness {
     "id"?: string,
     "alias": string,

@@ -4,6 +4,7 @@ import { GetRestaurants } from "./GetRestaurants";
 import ReviewPosts from "./ReviewPosts";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { IBusiness } from "./types/IBusinessResponse";
 
 function RestaurantInfo() {
     let id = useParams().restaurantId as string;
@@ -11,7 +12,7 @@ function RestaurantInfo() {
     // let restaurant = details.find((r) => {
     //    return r.id === id
     // })
-    const [restaurant, setRestaurant] = useState<Restaurant | null>(null)
+    const [restaurant, setRestaurant] = useState<IBusiness | null>(null)
     useEffect (() => {
         GetRestaurants(id).then ((response) => {
             setRestaurant(response)
