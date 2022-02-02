@@ -11,6 +11,7 @@ function BucketContextProvider({children}: Props) {
 
     function addBucket(bucketList: IBusiness): void {
         setBucketList(prev => [...prev, bucketList]);
+        console.log(bucketList);
     }
 
     const removeBucket = (i: number): void => {
@@ -20,6 +21,7 @@ function BucketContextProvider({children}: Props) {
     }
     function addFavorite(favorite: IBusiness): void {
         setFavorite(prev => [...prev, favorite]);
+        console.log(favorite);
     }
 
     const removeFavorite = (i: number): void => {

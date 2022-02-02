@@ -16,7 +16,7 @@ function Favorite() {
             <table>
                 <thead><td>Name</td><td>City</td><td>Restaurant Link</td><td>Remove</td></thead>
                 {
-                    context.bucketList.map((favItem, i) => <FavoritesListRow favItem={favItem} index={i}/>)
+                    context.favorite.map((favItem, i) => <FavoritesListRow favItem={favItem} index={i}/>)
                     
                 }
                 
