@@ -3,7 +3,8 @@ import react, { useState, useMemo } from 'react';
 import IBusinessResponse, { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
 import SearchBar from './SearchBar';
-
+import BucketList from '../components/BucketList/BucketList';
+import { GetRestaurants, SearchRestaurants } from '../GetRestaurants';
 
 
 const LandingPage = () => {
@@ -16,9 +17,8 @@ const LandingPage = () => {
         e.preventDefault();
         if(!location.length) return;
         const params = {term: food, location};
-        axios.get('http://localhost:5001/food-crawl-gc/us-central1/api/yelp', {params}).then((response: IBusinessResponse) => {
-            const {data} = response;
-            setResults(data);
+        SearchRestaurants(params).then((data: IBusiness[]) => {
+            setResults(data)
         }).catch((error) => {
             console.error(error);
         })

@@ -13,7 +13,7 @@ export interface BusinessItem {
 
 function GetBusiness(): Promise<BusinessItem[]> {
    
-    return axios.get(`http://localhost:5000/yelp/?term=sushi`).then( (response: any ) => {
+    return axios.get(process.env.REACT_APP_API_URL + '/yelp').then( (response: any ) => {
         
         return response.data;
         

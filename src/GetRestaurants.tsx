@@ -1,10 +1,26 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { Restaurant } from "./RestaurantInterface";
+import IBusinessResponse from "./types/IBusinessResponse";
+import { IBusiness } from "./types/IBusinessResponse";
 
-export function GetRestaurants(id?: string) : Promise<Restaurant>{
+const endpoint = process.env.REACT_APP_API_URL + `/yelp/`
+
+function GetResponseData(response: AxiosResponse <IBusiness[]>) : IBusiness[] {
+    return response.data
+}
+
+function GetResponseDataSingle(response: AxiosResponse <IBusiness>) : IBusiness {
+    return response.data
+}
+
+export function GetRestaurants(id?: string) : Promise<IBusiness>{
     return axios
-        .get(process.env.REACT_APP_API_URL + `/yelp/${id}`)
-        .then(response => {console.log(response.data)
-            return response.data
-        })
+        .get<IBusiness>(`${endpoint}/${id}`)
+        .then(GetResponseDataSingle)
+};
+
+export function SearchRestaurants(params?: any) : Promise<IBusiness[]>{
+    return axios
+        .get(endpoint, {params})
+        .then(GetResponseData)
 };
