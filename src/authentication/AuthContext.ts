@@ -10,4 +10,6 @@ const defaultValue: AuthContextModel = {
 };
 
 const AuthContext = createContext(defaultValue);
+
+
 export default AuthContext;

@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "food-crawl-gc",
   storageBucket: "food-crawl-gc.appspot.com",
   messagingSenderId: "734215482668",
-  appId: "1:734215482668:web:8003fa455a207b260cd089"
+  appId: "1:734215482668:web:59be2f1fb96c1c0b0cd089"
 };
 
 // Initialize Firebase
@@ -17,6 +17,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const authProvider = new GoogleAuthProvider();
 
+// Sign in
 export function signInWithGoogle(): void {
     signInWithPopup(auth, authProvider);
 };

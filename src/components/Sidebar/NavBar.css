@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 .navbar {
     background-color: black;
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
@@ -12,7 +14,7 @@
     align-items: center;
     position: relative;
     text-align: center;
-    left: 40%;
+    font-family: 'Gloria Hallelujah', sans-serif;
 }
 
 .menu-bars {
@@ -23,7 +25,7 @@
 
 .nav-menu {
     background-color: black;
-    width: 250px;
+    width: 220px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -45,6 +47,7 @@
     padding: 8px 0px 8px 16px;
     list-style: none;
     height: 60px;
+    font-family: 'Gloria Hallelujah', sans-serif;
 }
 
 .nav-text a {
@@ -65,6 +68,7 @@
 
 .nav-menu-items {
     width: 100%;
+    padding: 1rem;
 }
 
 .navbar-toggle {
@@ -76,6 +80,23 @@
     align-items: center;
 }
 
-span {
-    margin-left: 16px;
+.gbuttons {
+    display: flex;
+    padding: 1rem;
+  }
+
+/* button {
+    font-family: 'Gloria Hallelujah', sans-serif;
+} */
+
+
+@media screen and (max-width: 768px){
+    .navbar h1 {
+        color: white;
+        align-items: center;
+        position: relative;
+        text-align: center;
+        font-family: 'Gloria Hallelujah', sans-serif;
+    }
+
 }

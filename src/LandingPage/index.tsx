@@ -2,7 +2,6 @@ import axios from 'axios';
 import react, { useState, useMemo } from 'react';
 import IBusinessResponse, { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
-
 import SearchBar from './SearchBar';
 import BucketList from '../components/BucketList/BucketList';
 import { GetRestaurants, SearchRestaurants } from '../GetRestaurants';

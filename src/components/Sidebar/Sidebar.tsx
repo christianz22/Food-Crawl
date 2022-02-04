@@ -20,10 +20,4 @@ export const SidebarData = [
         icon: <AiIcons.AiFillHeart/>,
         cName: 'nav-text'
     },
-    {
-        title: 'Reviews',
-        path: '/reviews',
-        icon: <AiIcons.AiFillStar/>,
-        cName: 'nav-text'
-    }
 ];

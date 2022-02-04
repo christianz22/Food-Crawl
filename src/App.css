@@ -226,6 +226,17 @@
 }
 
 .thoughtHdr {
+  font-family: 'Dosis';
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 350px;
+}
+
+.result-item {
+  display: block;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1rem;
     font-family: 'Dosis';
     font-weight: bold;
     font-size: 18px;

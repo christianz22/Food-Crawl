@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import BucketContext from './BucketContext';
 import { IBusiness } from '../../types/IBusinessResponse';
-
+import { BsFillTrashFill  } from "react-icons/bs";
 
 function BucketListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, index: number }) {
 
@@ -12,7 +12,7 @@ function BucketListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, ind
             <td>{foodItem.name}</td>
             <td>{foodItem.location?.city}</td>
             <td><a href={foodItem.url}>Website</a></td>
-            <td><button onClick={ () => removeBucket(index)}>Remove</button></td>
+            <td><BsFillTrashFill onClick={ () => removeBucket(index)}/></td>
         </tr>
     )
 }
