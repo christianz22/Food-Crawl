@@ -4,7 +4,7 @@ import IBusinessResponse from "./types/IBusinessResponse";
 import { IBusiness } from "./types/IBusinessResponse";
 
 const endpoint = process.env.REACT_APP_API_URL + `/yelp/`
-
+console.log(endpoint);
 function GetResponseData(response: AxiosResponse <IBusiness[]>) : IBusiness[] {
     return response.data
 }
