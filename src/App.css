@@ -38,11 +38,11 @@
 }
 
 
-/* .imgContainer {
-  display: flex; 
-  width: 500px;
-  height: 500px;
-} */
+.imgBackground {
+    width: 90%;
+    background-size: cover;
+    color: white;
+}
 
 .imgUrl {
     width: 300px;

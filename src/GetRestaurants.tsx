@@ -15,7 +15,7 @@ function GetResponseDataSingle(response: AxiosResponse <IBusiness>) : IBusiness 
 
 export function GetRestaurants(id?: string) : Promise<IBusiness>{
     return axios
-        .get<IBusiness>(`${endpoint}/${id}`)
+        .get<IBusiness>(`${endpoint}${id}`)
         .then(GetResponseDataSingle)
 };
 

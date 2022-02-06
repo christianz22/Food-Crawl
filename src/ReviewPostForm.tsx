@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 
 interface openClose {
     onAdd : Function,
@@ -6,6 +7,9 @@ interface openClose {
 }
 // this is the modal that pops up after selecting add review on details page
 function ReviewForm({ onAdd, onClose }: openClose) {
+
+    const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews'
+
     const [title, setTitle] = useState('');
     const [review, setReview] = useState('');
     return (
@@ -14,6 +18,10 @@ function ReviewForm({ onAdd, onClose }: openClose) {
             <div className='modal'>
                 <form className= 'modal-form' onSubmit={(e) => {
                     e.preventDefault();
+                    axios.post(apiUrl, {
+                        title,
+                        review
+                    })
                     onAdd({ title, review })
                 }}>
                     <button 
