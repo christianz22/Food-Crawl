@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from 'axios';
+import AuthContext from "./authentication/AuthContext"
 
 interface openClose {
     onAdd : Function,
-    onClose : Function
+    onClose : Function,
+    restaurantId : string,
 }
 // this is the modal that pops up after selecting add review on details page
-function ReviewForm({ onAdd, onClose }: openClose) {
+function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
 
     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews'
 
-    const [title, setTitle] = useState('');
+    const {user} = useContext(AuthContext);
+    const [title, setTitle] = useState('My Title Here');
     const [review, setReview] = useState('');
     return (
         // will need to add modal class CSS
@@ -20,7 +23,9 @@ function ReviewForm({ onAdd, onClose }: openClose) {
                     e.preventDefault();
                     axios.post(apiUrl, {
                         title,
-                        review
+                        review,
+                        user: user?.uid,
+                        restaurantId,
                     })
                     onAdd({ title, review })
                 }}>
@@ -36,6 +41,7 @@ function ReviewForm({ onAdd, onClose }: openClose) {
                         onChange={e => setTitle(e.target.value)} 
                         name='title' 
                         id='title' 
+                        value={title}
                         type='text'>
                     </input>
                     <label 
