@@ -31,10 +31,6 @@ function App() {
           element={<RestaurantInfo />}
         />
         <Route
-          path='/reviews' 
-          element={<Reviews />}
-          />
-        <Route
           path='/'
           element={<LandingPage />}
         />
