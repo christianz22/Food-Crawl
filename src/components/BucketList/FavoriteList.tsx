@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import BucketContext from './BucketContext';
 import { IBusiness } from '../../types/IBusinessResponse';
+import { BsFillTrashFill  } from "react-icons/bs";
 
 
 function FavoritesListRow({ favItem: favItem, index }: { favItem: IBusiness, index: number }) {
@@ -12,7 +13,7 @@ function FavoritesListRow({ favItem: favItem, index }: { favItem: IBusiness, ind
             <td>{favItem.name}</td>
             <td>{favItem.location?.city}</td>
             <td><a href={favItem.url}>Website</a></td>
-            <td><button onClick={ () => removeFavorite(index)}>Remove</button></td>
+            <td><BsFillTrashFill onClick={ () => removeFavorite(index)}/></td>
         </tr>
     )
 }

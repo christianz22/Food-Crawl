@@ -1,5 +1,9 @@
 .App {
     text-align: center;
+    background-image: url('images/unsplash.jpg');
+    width: 100%;
+    height: fit-content;
+    background-size: auto;
 }
 
 .App-logo {
@@ -37,12 +41,6 @@
     }
 }
 
-
-/* .imgContainer {
-  display: flex; 
-  width: 500px;
-  height: 500px;
-} */
 
 .imgUrl {
     width: 300px;

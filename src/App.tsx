@@ -6,7 +6,8 @@ import LandingPage from './LandingPage';
 import BucketList from './components/BucketList/BucketList';
 import Favorite from './components/BucketList/Favorite';
 import Navbar from './components/Sidebar/NavBar';
-import SignIn from './components/Signin/signin';
+
+
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
   return (
     
     <>
+
+    
   
     <Router basename={process.env.PUBLIC_URL}>
     
@@ -44,6 +47,8 @@ function App() {
           element={<Favorite />}
         />
       </Routes>
+
+     
     </div>
     </Router>
 
