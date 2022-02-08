@@ -10,6 +10,7 @@ function ReviewForm({ onAdd, onClose }: openClose) {
     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews'
     const [title, setTitle] = useState('');
     const [review, setReview] = useState('');
+    const [user, setUser] = useState('');
     return (
         // will need to add modal class CSS
         <div className='modal-bg'>
@@ -18,7 +19,9 @@ function ReviewForm({ onAdd, onClose }: openClose) {
                     e.preventDefault();
                     axios.post(apiUrl, {
                         title,
-                        review
+                        review,
+                        user
+                        
                     })
                     onAdd({ title, review })
                 }}>
