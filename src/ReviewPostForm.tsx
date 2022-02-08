@@ -13,7 +13,7 @@ function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews'
 
     const {user} = useContext(AuthContext);
-    const [title, setTitle] = useState('My Title Here');
+    const [title, setTitle] = useState(' ');
     const [review, setReview] = useState('');
     return (
         // will need to add modal class CSS
@@ -41,7 +41,6 @@ function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
                         onChange={e => setTitle(e.target.value)} 
                         name='title' 
                         id='title' 
-                        value={title}
                         type='text'>
                     </input>
                     <label 
