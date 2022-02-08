@@ -10,7 +10,6 @@ export interface BusinessItem {
     id: any;
 }
 
-
 function GetBusiness(): Promise<BusinessItem[]> {
    
     return axios.get(process.env.REACT_APP_API_URL + '/yelp').then( (response: any ) => {
@@ -20,7 +19,5 @@ function GetBusiness(): Promise<BusinessItem[]> {
     });
     
 }
-
-
 
 export default GetBusiness;

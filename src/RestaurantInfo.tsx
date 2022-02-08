@@ -35,7 +35,7 @@ function RestaurantInfo() {
             <p>City: {restaurant.location?.city}</p>
             <p>State: {restaurant.location?.state}</p>
             <p>Zipcode: {restaurant.location?.zip_code}</p>
-            <p><ReviewPosts /></p> 
+            <p><ReviewPosts restaurantId={restaurant.id || ''}/></p> 
         </div>
         
     )}
