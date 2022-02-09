@@ -7,11 +7,11 @@ const endpoint = process.env.REACT_APP_API_URL + `/yelp/`
 console.log(endpoint);
 function GetResponseData(response: AxiosResponse <IBusiness[]>) : IBusiness[] {
     return response.data
-}
+};
 
 function GetResponseDataSingle(response: AxiosResponse <IBusiness>) : IBusiness {
     return response.data
-}
+};
 
 export function GetRestaurants(id?: string) : Promise<IBusiness>{
     return axios
