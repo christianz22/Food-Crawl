@@ -2,22 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import ReviewPost from "./ReviewPost";
 import ReviewInList from "./ReviewInList";
 import ReviewForm from "./ReviewPostForm";
-<<<<<<< HEAD
-import AuthContext from "./authentication/AuthContext";
-import axios from "axios";
-
-function ReviewPosts({ restaurantId } : { restaurantId: string }) {
-
-    const [ modalOpen, setOpen ] = useState (false);
-    const [ postList, setPostList ] = useState <ReviewPost[]> ([]);
-    const {user} = useContext (AuthContext)
-
-    useEffect( () => {
-        //call reviews API
-        if (user) {
-        const apiUrl = 'https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews/' + user?.uid
-        axios.get(apiUrl).then( (response) => {
-=======
 import axios from "axios";
 import AuthContext from "./authentication/AuthContext";
 
@@ -31,7 +15,6 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
         if (user) {
         const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews/' + user?.uid
         axios.get(apiUrl).then((response) =>{
->>>>>>> c76e68b2aa7d90185ec63e2143297bbb882f5736
             setPostList(response.data)
         })}
     },[user])
@@ -78,13 +61,8 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
                     setPage(page + 1)
                 }}>Next</button>}</p>
             </div>
-<<<<<<< HEAD
-            { modalOpen === true && <ReviewForm
-                restaurantId = {restaurantId} 
-=======
             { modalOpen === true && <ReviewForm 
                 restaurantId={restaurantId}
->>>>>>> c76e68b2aa7d90185ec63e2143297bbb882f5736
                 onAdd={addPost} 
                 onClose={() => 
                 setOpen(false)}/> }
