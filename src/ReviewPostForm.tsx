@@ -1,13 +1,11 @@
 import { useState, useContext } from "react";
 import axios from 'axios';
-import AuthContext from "./authentication/AuthContext";
-
+import AuthContext from "./authentication/AuthContext"
 
 interface openClose {
     onAdd : Function,
     onClose : Function,
     restaurantId : string,
-
 }
 // this is the modal that pops up after selecting add review on details page
 function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
@@ -15,7 +13,6 @@ function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
 
     const {user} = useContext(AuthContext);
     const [title, setTitle] = useState(' ');
-
     const [review, setReview] = useState('');
     return (
         // will need to add modal class CSS
@@ -28,7 +25,6 @@ function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
                         review,
                         user: user?.uid,
                         restaurantId,
-
                     })
                     onAdd({ title, review })
                 }}>
