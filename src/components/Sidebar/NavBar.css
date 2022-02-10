@@ -8,7 +8,9 @@
     align-items: center;
     text-align: center;
 }
-
+.navbar > * {
+    flex: 1;
+}
 .navbar h1 {
     color: white;
     align-items: center;
@@ -21,6 +23,7 @@
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    text-align: left;
 }
 
 .nav-menu {
@@ -83,6 +86,8 @@
 .gbuttons {
     display: flex;
     padding: 1rem;
+    color: white;
+    justify-content: flex-end;
   }
 
 /* button {

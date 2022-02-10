@@ -4,6 +4,7 @@ import { IBusiness } from '../types/IBusinessResponse';
 import BucketContext from '../components/BucketList/BucketContext';
 import AuthContext from '../authentication/AuthContext';
 import axios from 'axios';
+import BucketList from '../components/BucketList/BucketList';
 
 
 
@@ -16,7 +17,7 @@ interface IProps {
  const ResultItem = ({item}: IProps ) => {
     
     const {addBucket, addFavorite} = useContext(BucketContext);
-    const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/bucketlist';
+    const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/';
     const {user} = useContext(AuthContext);
 
 
@@ -31,7 +32,7 @@ interface IProps {
         <button
             type="submit"
             onClick={() => {
-                axios.post(apiUrl, {
+                axios.post(apiUrl + 'bucketlist', {
                     ...item,
                     user: user?.uid,
                     restaurantId: item.id,
@@ -44,6 +45,11 @@ interface IProps {
         <button
             type="submit"
             onClick={() => {
+                axios.post(apiUrl + 'favorites', {
+                    ...item,
+                    user: user?.uid,
+                    restaurantId: item.id,
+                })
             addFavorite(item);
             }}>
             Add to Favorites

@@ -12,11 +12,20 @@ function BucketContextProvider({children}: Props) {
     const [favorite, setFavorite] = useState<IBusiness[]>([]);
     const {user} = useContext(AuthContext);
     useEffect(() =>{
-        // call reviews API
+        // calls bucketlist API
         if (user) {
         const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/bucketlist/' + user.uid;
         axios.get(apiUrl).then((response) =>{
             setBucketList(response.data)
+        })}
+    },[user])
+
+    useEffect(() =>{
+        // calls favorites API
+        if (user) {
+        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/favorites/' + user.uid;
+        axios.get(apiUrl).then((response) =>{
+            setFavorite(response.data)
         })}
     },[user])
 
