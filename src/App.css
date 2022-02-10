@@ -4,10 +4,22 @@
     width: 100%;
     height: fit-content;
     background-size: cover;
+    padding: 1rem;
 }
 .App-logo {
     height: 40vmin;
     pointer-events: none;
+}
+
+main {
+    max-width: 767px;
+    background-color: RGBA(200, 200, 200, .6);
+    margin: 0 auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
