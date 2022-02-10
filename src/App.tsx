@@ -24,7 +24,7 @@ function App() {
     <Navbar />
     
     <div className="App">
-    
+    <main>
       <Routes>
         <Route
           path='/restaurant-info/:restaurantId'
@@ -44,7 +44,7 @@ function App() {
         />
       </Routes>
 
-     
+    </main>
     </div>
     </Router>
 

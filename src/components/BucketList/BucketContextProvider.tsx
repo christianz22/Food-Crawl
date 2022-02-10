@@ -1,6 +1,8 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect, useContext } from "react";
 import { IBusiness } from "../../types/IBusinessResponse";
 import BucketContext from './BucketContext';
+import AuthContext from '../../authentication/AuthContext';
+import axios from 'axios';
 
 
 interface Props { children: ReactNode; }
@@ -8,6 +10,15 @@ interface Props { children: ReactNode; }
 function BucketContextProvider({children}: Props) {
     const [bucketList, setBucketList] = useState<IBusiness[]>([]);
     const [favorite, setFavorite] = useState<IBusiness[]>([]);
+    const {user} = useContext(AuthContext);
+    useEffect(() =>{
+        // call reviews API
+        if (user) {
+        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/bucketlist/' + user.uid;
+        axios.get(apiUrl).then((response) =>{
+            setBucketList(response.data)
+        })}
+    },[user])
 
     function addBucket(bucketList: IBusiness): void {
         setBucketList(prev => [...prev, bucketList]);

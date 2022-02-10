@@ -3,10 +3,11 @@ import BucketContext from './BucketContext';
 import { IBusiness } from '../../types/IBusinessResponse';
 import { BsFillTrashFill  } from "react-icons/bs";
 
+
 function BucketListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, index: number }) {
 
    const {removeBucket} = useContext(BucketContext);
-
+  
     return (
         <tr className='bucket-list-row'>
             <td>{foodItem.name}</td>
