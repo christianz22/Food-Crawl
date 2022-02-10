@@ -5,7 +5,7 @@
     background-image: url('images/unsplash.jpg');
     width: 100%;
     height: fit-content;
-    background-size: auto;
+    background-size: cover;
 }
 
 .App-logo {
