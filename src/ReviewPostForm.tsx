@@ -9,7 +9,6 @@ interface openClose {
 }
 // this is the modal that pops up after selecting add review on details page
 function ReviewForm({ onAdd, onClose, restaurantId }: openClose) {
-
     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews'
 
     const {user} = useContext(AuthContext);
