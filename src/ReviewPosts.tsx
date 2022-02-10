@@ -13,8 +13,8 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
     useEffect(() =>{
         // call reviews API
         if (user) {
-        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews/' + user?.uid
-        axios.get(apiUrl).then((response) =>{
+        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews/'
+        axios.get(apiUrl, {params : {restaurantId}}).then((response) =>{
             setPostList(response.data)
         })}
     },[user])
