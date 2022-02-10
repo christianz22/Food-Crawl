@@ -12,7 +12,7 @@ function BucketListRow({ foodItem: foodItem, index }: { foodItem: IBusiness, ind
             <td>{foodItem.name}</td>
             <td>{foodItem.location?.city}</td>
             <td><a href={foodItem.url}>Website</a></td>
-            <td><BsFillTrashFill onClick={ () => removeBucket(index)}/></td>
+            <td><button onClick={ () => removeBucket(index)}><BsFillTrashFill/></button></td>
         </tr>
     )
 }

@@ -13,7 +13,7 @@ function FavoritesListRow({ favItem: favItem, index }: { favItem: IBusiness, ind
             <td>{favItem.name}</td>
             <td>{favItem.location?.city}</td>
             <td><a href={favItem.url}>Website</a></td>
-            <td><BsFillTrashFill onClick={ () => removeFavorite(index)}/></td>
+            <td><button onClick={ () => removeFavorite(index)}><BsFillTrashFill/></button></td>
         </tr>
     )
 }
