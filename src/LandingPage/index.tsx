@@ -3,11 +3,12 @@ import { IBusiness } from '../types/IBusinessResponse';
 import ResultItem from './ResultItem';
 import SearchBar from './SearchBar';
 import { SearchRestaurants } from '../GetRestaurants';
+import '../App.css'
 
 const LandingPage = () => {
     const [results, setResults] = useState<IBusiness[]>([]);
-    const [food, setFood] = useState('Sushi');
-    const [location, setLocation] = useState('Michigan');
+    const [food, setFood] = useState('');
+    const [location, setLocation] = useState('');
     const [page, setPage] = useState(0)
     const pageSize = 4;
 
@@ -62,11 +63,11 @@ const LandingPage = () => {
                 <div className='result-list'>
                     {resultItems}
                     {!location.length && <span>Location needs to be specified.</span>}
-                <p>{page > 0 && <button type='submit' onClick={() => {
+                <p >{page > 0 && <button className="nextprev-btn" type='submit' onClick={() => {
                     setPage(page - 1)
                     nextPrev()
                 }}>Prev</button>}
-                {(page + 1) * pageSize < results.length && <button onClick={() => {
+                {(page + 1) * pageSize < results.length && <button className="nextprev-btn" onClick={() => {
                     setPage(page + 1)
                     nextPrev()
                 }}>Next</button>}</p>

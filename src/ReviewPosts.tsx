@@ -4,6 +4,7 @@ import ReviewInList from "./ReviewInList";
 import ReviewForm from "./ReviewPostForm";
 import axios from "axios";
 import AuthContext from "./authentication/AuthContext";
+import './App.css'
 
 function ReviewPosts({restaurantId}: {restaurantId: string}) {
     const [ modalOpen, setOpen ] = useState(false);
@@ -57,18 +58,19 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
                         )
                     })}
                 </p>
-                <p>{page > 0 && <button onClick={() => {
-                    setPage(page - 1)
-                }}>Prev</button>}
-                {(page + 1) * pageSize < postList.length && <button onClick={() => {
-                    setPage(page + 1)
-                }}>Next</button>}</p>
             </div>
             { modalOpen === true && <ReviewForm 
                 restaurantId={restaurantId}
                 onAdd={addPost} 
                 onClose={() => 
                 setOpen(false)}/> }
+
+                <p >{page > 0 && <button className="nextprev-btn" onClick={() => {
+                    setPage(page - 1)
+                }}>Prev</button>}
+                {(page + 1) * pageSize < postList.length && <button className="nextprev-btn" onClick={() => {
+                    setPage(page + 1)
+                }}>Next</button>}</p>
         </div>
     )
 };
