@@ -1,6 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import { Restaurant } from "./RestaurantInterface";
-import IBusinessResponse from "./types/IBusinessResponse";
 import { IBusiness } from "./types/IBusinessResponse";
 
 const endpoint = process.env.REACT_APP_API_URL + `/yelp/`

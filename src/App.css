@@ -2,11 +2,20 @@
 
 .App {
     text-align: center;
+    /* background-image: url('images/unsplash.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    padding: 1rem; */
+}
+
+body {
     background-image: url('images/unsplash.jpg');
     width: 100%;
     height: 100vh;
     background-size: cover;
     padding: 1rem;
+    background-attachment: fixed;
 }
 
 .App-logo {
@@ -263,6 +272,71 @@ p {
     font-size: 18px;
 }
 
+.search-submit {
+    appearance: button;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: #fff 3px 3px 0 0, #000 3px 3px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+.search-submit:focus {
+    text-decoration: none;
+}
+.search-submit:hover {
+    text-decoration: none;
+}
+.search-submit:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+}
+.search-submit:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+}
+.search-input {
+    background-color: white;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+
 @media only screen and (max-width: 480px) {
     .modal-bg {
         width: 100%;
@@ -316,7 +390,7 @@ p {
           margin-right: 2rem;
       }
       .imgUrl {
-          width: 230px;
+          width: 185px;
           height: 100%;
       }
 

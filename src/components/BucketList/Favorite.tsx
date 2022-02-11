@@ -1,5 +1,4 @@
-import { useState, useContext } from 'react';
-import IBusiness from '../../types/IBusinessResponse';
+import { useContext } from 'react';
 import FavoritesListRow from './FavoriteList';
 import BucketContext from './BucketContext';
 

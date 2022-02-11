@@ -1,5 +1,4 @@
 import './App.css';
-import Reviews from './Rewiews';
 import RestaurantInfo from './RestaurantInfo';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from './LandingPage';

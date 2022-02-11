@@ -4,7 +4,7 @@ import { IBusiness } from '../types/IBusinessResponse';
 import BucketContext from '../components/BucketList/BucketContext';
 import AuthContext from '../authentication/AuthContext';
 import axios from 'axios';
-import BucketList from '../components/BucketList/BucketList';
+
 
 
 
@@ -15,14 +15,14 @@ interface IProps {
 
 
  const ResultItem = ({item}: IProps ) => {
-    
-    const {addBucket, addFavorite, favorite} = useContext(BucketContext);
+    // add favorite
+    const {addBucket, addFavorite} = useContext(BucketContext);
     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/';
     const {user} = useContext(AuthContext);
 
-    const isFavorited = favorite.find((f) => {
-        f.id === item.id
-    })
+    // const isFavorited = favorite.find((f) => {
+    //     f.id === item.id
+    // })
 
     
 
