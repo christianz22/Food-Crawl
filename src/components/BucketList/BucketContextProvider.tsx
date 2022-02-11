@@ -35,6 +35,9 @@ function BucketContextProvider({children}: Props) {
     }
 
     const removeBucket = (i: number): void => {
+        const bucketToRemove = bucketList[i]
+        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/bucketlist/' + user?.uid+ "/" + bucketToRemove.id;
+        axios.delete(apiUrl)
         setBucketList((prevBuckets) => {
         return [...prevBuckets.slice(0, i), ...prevBuckets.slice(i + 1)];
     })
@@ -45,6 +48,9 @@ function BucketContextProvider({children}: Props) {
     }
 
     const removeFavorite = (i: number): void => {
+        const favoriteToRemove = favorite[i]
+        const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/favorites/' + user?.uid+ "/" + favoriteToRemove.id;
+        axios.delete(apiUrl)
         setFavorite((prevFavorite) => {
         return [...prevFavorite.slice(0, i), ...prevFavorite.slice(i + 1)];
     })

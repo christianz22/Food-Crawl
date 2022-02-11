@@ -26,12 +26,15 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
         setOpen(false)
     };
 
-    const postDelete = (i: number) => {
-        setPostList((prevPostList) => {
-            return [...prevPostList.slice(0, i), ...prevPostList.slice(i + 1)];
-        })
+    // const postDelete = (i: number) => {
+    //     const reviewToRemove = postList[i]
+    //     const apiUrl ='https://us-central1-food-crawl-gc.cloudfunctions.net/api/reviews/' + reviewToRemove;
+    //     axios.delete(apiUrl)
+    //     setPostList((prevPostList) => {
+    //         return [...prevPostList.slice(0, i), ...prevPostList.slice(i + 1)];
+    //     })
         
-    }
+    // }
     
     const [page, setPage] = useState(0)
     const pageSize = 5;
@@ -49,7 +52,7 @@ function ReviewPosts({restaurantId}: {restaurantId: string}) {
                         return (
                             <ReviewInList 
                                 post={post}
-                                onDelete={ () => postDelete(i)}
+                                // onDelete={ () => postDelete(i)}
                             />
                         )
                     })}

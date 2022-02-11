@@ -1,4 +1,3 @@
-import react, { useState } from 'react'
 import RestaurantResponse from './RestaurantInterface';
 // To Do need to call API no hard coded data
 const foodAPI = () => {

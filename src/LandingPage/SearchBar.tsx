@@ -1,6 +1,6 @@
 import react from 'react';
 import { BiSearchAlt2 } from "react-icons/bi";
-import '../App.css';
+import '../App.css'
 
 interface IProps {
     onFormSubmit: react.FormEventHandler<HTMLFormElement>;

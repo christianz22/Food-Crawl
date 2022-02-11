@@ -1,9 +1,7 @@
 import { useParams } from "react-router";
-import { Restaurant } from "./RestaurantInterface";
 import { GetRestaurants } from "./GetRestaurants";
 import ReviewPosts from "./ReviewPosts";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { IBusiness } from "./types/IBusinessResponse";
 
 function RestaurantInfo() {
