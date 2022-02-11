@@ -4,6 +4,7 @@ import { IBusiness } from '../types/IBusinessResponse';
 import BucketContext from '../components/BucketList/BucketContext';
 import AuthContext from '../authentication/AuthContext';
 import axios from 'axios';
+import '../App.css';
 
 
 
@@ -31,7 +32,7 @@ interface IProps {
         <img className ='imgUrl' src={item.image_url}></img>
         <h3><strong>{item.name}</strong></h3>
         <p><strong>City: </strong>{item.location?.city}</p>
-        <button
+        <button className='bucket-btn'
             type="submit"
             onClick={() => {
                 axios.post(apiUrl + 'bucketlist', {
@@ -44,7 +45,7 @@ interface IProps {
             }}>
             Add to My Bucket List
         </button>
-        <button
+        <button className='favorite-btn'
             type="submit"
             onClick={() => {
                 axios.post(apiUrl + 'favorites', {
