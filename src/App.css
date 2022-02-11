@@ -75,6 +75,15 @@ p {
     }
 }
 
+.favorite-list-row {
+    font-family: "Gloria Hallelujah";
+    font-size: 2rem;
+}
+
+.bucket-list-row {
+    font-family: "Gloria Hallelujah";
+    font-size: 2rem;
+}
 
 .imgUrl {
     width: 300px;

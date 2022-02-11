@@ -13,7 +13,7 @@ function BucketList() {
         <div className="bucketlist-container">
            
             <table>
-                <thead><td>Name</td><td>City</td><td>Restaurant Link</td><td>Remove</td></thead>
+                <thead><td><strong>Name</strong></td><td><strong>City</strong></td><td><strong>Restaurant Link</strong></td><td><strong>Remove</strong></td></thead>
                 {
                     context.bucketList.map((foodItem, i) => <BucketListRow foodItem={foodItem} index={i}/>)
                     
