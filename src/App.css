@@ -25,6 +25,14 @@ main {
     -o-border-radius: 5px;
 }
 
+h3 {
+    font-family: "Gloria Hallelujah";
+}
+
+p {
+    font-family: "Gloria Hallelujah";
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
@@ -246,13 +254,13 @@ main {
 
 .result-item {
   display: block;
-  border: 5px solid black;
+  border: 45px solid black;
+  border-radius: 75px;
   padding: 15px;
-  margin: 1rem;
+  margin: 2rem;
     font-family: 'Gloria Hallelujahgit ';
     font-weight: bold;
     font-size: 18px;
-    margin-right: 350px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -293,4 +301,28 @@ main {
         width: 65px;
         margin-left: 285px;
     }
+
+    .result-item {
+        display: block;
+        border: 5px solid black;
+        padding: 15px;
+        margin: 1rem;
+          font-family: 'Gloria Hallelujahgit ';
+          font-weight: bold;
+          font-size: 18px;
+      }
+
+      main {
+          margin-right: 2rem;
+      }
+      .imgUrl {
+          width: 230px;
+          height: 100%;
+      }
+
+      .App {
+          background-size: cover;
+          
+          width: auto;
+      }
 }
