@@ -1,5 +1,6 @@
 import react from 'react';
 import { BiSearchAlt2 } from "react-icons/bi";
+import '../App.css';
 
 interface IProps {
     onFormSubmit: react.FormEventHandler<HTMLFormElement>;
@@ -14,9 +15,9 @@ const SearchBar = (props: IProps) => {
     return (
         <>
         <form className='search-inputs' onSubmit={onFormSubmit}>
-            <input type="text" placeholder='food' value={food} onChange={onFoodChange} />
-            <input type="text" placeholder='place' value={location} onChange={onLocationChange} />
-            <button type='submit'><BiSearchAlt2/>Search</button>
+            <input className='search-input' type="text" placeholder='food' value={food} onChange={onFoodChange} />
+            <input className='search-input' type="text" placeholder='place' value={location} onChange={onLocationChange} />
+            <button className='search-submit' type='submit'><BiSearchAlt2/>Search</button>
         </form>    
         </>
     );
