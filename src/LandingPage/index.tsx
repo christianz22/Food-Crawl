@@ -51,7 +51,8 @@ const LandingPage = () => {
     };
 
     return (
-        <div>
+        <>
+        <div className='landingpage'>
             
             <SearchBar 
                 onFormSubmit={onFormSubmit} 
@@ -74,6 +75,12 @@ const LandingPage = () => {
                 </div>
 
         </div>
+{/* 
+        <div className='mission'>
+            <h1>Our Mission:</h1>
+            <p>Have you ever been to an amazing restaurant only to forget where it was?</p>
+        </div> */}
+        </>
     );
 }
 

@@ -20,7 +20,7 @@ function RestaurantInfo() {
         return <div>Not found</div>
     } else {
     return (
-        <div> 
+        <div className="reviews-page"> 
             <h1>{restaurant.name}</h1>
             <div className= 'imgContainer'>
                 <img className= 'imgUrl' src={restaurant.image_url}></img>

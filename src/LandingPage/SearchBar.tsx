@@ -18,7 +18,8 @@ const SearchBar = (props: IProps) => {
             <input className='search-input' type="text" placeholder='Restaurant' value={food} onChange={onFoodChange} />
             <input className='search-input' type="text" placeholder='City, State' value={location} onChange={onLocationChange} />
             <button className='search-submit' type='submit'><BiSearchAlt2/>Search</button>
-        </form>    
+        </form>  
+  
         </>
     );
 }

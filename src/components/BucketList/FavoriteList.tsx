@@ -9,12 +9,16 @@ function FavoritesListRow({ favItem: favItem, index }: { favItem: IBusiness, ind
    const {removeFavorite} = useContext(BucketContext);
 
     return (
+
+        
+        
         <tr className='favorite-list-row'>
-            <td>{favItem.name}</td>
-            <td>{favItem.location?.city}</td>
-            <td><a href={favItem.url}>Website</a></td>
-            <td><button onClick={ () => removeFavorite(index)}><BsFillTrashFill/></button></td>
+        <td>{favItem.name}</td>
+        <td>{favItem.location?.city}</td>
+        <td><a href={favItem.url}>Website</a></td>
+        <td><button className='favtrash' onClick={ () => removeFavorite(index)}><BsFillTrashFill/></button></td>
         </tr>
+        
     )
 }
 
